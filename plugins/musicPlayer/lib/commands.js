@@ -146,7 +146,7 @@ class summon {
         this.plugin = plugin;
         this.id = "summon"
         this.names = ["summon", "join", "comehere"];
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr, channel, server) {
 
             if (mpegPlayer.hasOwnProperty(server.id)) {
@@ -208,7 +208,7 @@ class getSong {
         this.plugin = plugin;
         this.id = "request";
         this.names = ["request", "soundcloud", "add", "youtube", "yt", "sc"]
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, message, author, channel, server) {
             var args = message.content.split(" ");
             var toUpdate;
@@ -330,7 +330,7 @@ class destroy {
         this.plugin = plugin
         this.id = "destroy";
         this.names = ["destroy", "leave"];
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr, channel, server) {
             if (mpegPlayer.hasOwnProperty(msg.channel.server.id)) {
                 try {
@@ -350,7 +350,7 @@ class play {
         this.plugin = plugin;
         this.id = "play"
         this.names = ["play", "startmusic", "resume"];
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr, channel, server) {
             if (mpegPlayer.hasOwnProperty(server.id)) {
                 try {
@@ -371,7 +371,7 @@ class queueMsg {
         this.plugin = plugin
         this.id = "playlist";
         this.names = ["browser", "queue", "playlist", "pl"];
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr) {
             var queue = ["Current Playlist:\n\n"];
             try {
@@ -438,7 +438,7 @@ class skip {
         this.plugin = plugin
         this.id = "skip";
         this.names = ["skip", "next", "newsong", "playnext"]
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr, channel, server) {
 
             if (!mpegPlayer.hasOwnProperty(server.id)) return;
@@ -457,7 +457,7 @@ class pause {
         this.plugin = plugin
         this.id = "pause"
         this.names = ["pause", "stop", "stopmusic"]
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, author, channel, srv) {
             if (mpegPlayer.hasOwnProperty(srv.id)) {
                 var Guild = lib.openJSON(mpegPlayer[srv.id].plFile);
@@ -515,7 +515,7 @@ class clearplaylist {
         this.plugin = plugin
         this.id = "clearplaylist"
         this.names = ["cpl", "clearplaylist", "clearpl", "playlistclear"]
-        this.role = "@everyone"
+        this.role = "DJ"
         this.func = function(bot, msg, usr, channel, server) {
             if (mpegPlayer.hasOwnProperty(server.id)) {
                 try {
